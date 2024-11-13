@@ -5,10 +5,12 @@
  */
 package io.jooby.openapi;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import io.jooby.SneakyThrows;
+import io.jooby.internal.openapi.AsciiDocGenerator;
 import io.jooby.internal.openapi.OpenAPIExt;
 import io.swagger.v3.core.util.Json;
 import io.swagger.v3.core.util.Yaml;
@@ -85,5 +87,16 @@ public class OpenAPIResult {
     var result = new OpenAPIResult(null);
     result.failure = failure;
     return result;
+  }
+
+  public String toAsciiDoc() {
+    if (failure != null) {
+      throw failure;
+    }
+    try {
+      return AsciiDocGenerator.generate(openAPI);
+    } catch (IOException e) {
+      throw SneakyThrows.propagate(e);
+    }
   }
 }

@@ -1,0 +1,62 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+
+.admonitionblock.tip.put table td.icon .title {
+  background-color: #f70;
+  color: #fff;
+}
+
+.admonitionblock.tip.patch table td.icon .title {
+  background-color: #802392;
+  color: #fff;
+}
+
+.admonitionblock.tip.get table td.icon .title {
+  background-color: #43b929;
+  color: #fff;
+}
+
+.admonitionblock.tip.delete table td.icon .title {
+  background-color: #e40046;
+  color: #fff;
+}
+
+.admonitionblock.tip.post table td.icon .title {
+  background-color: #2d7dd2;
+  color: #fff;
+}
+
+.admonitionblock.tip.head table td.icon .title {
+  background-color: #43b929;
+  color: #fff;
+}
+
+.admonitionblock.tip.trace table td.icon .title {
+  background-color: #43b929;
+  color: #fff;
+}
+
+.admonitionblock.tip.options table td.icon .title {
+  background-color: #43b929;
+  color: #fff;
+}
+
+.admonitionblock td.content>.title {
+  font-style: normal;
+  color: black;
+}
+
+.admonitionblock td.content>.title .method {
+  font-style: normal;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 600;
+  word-break: break-word;
+  color: black;
+}
+
+.admonitionblock td.content>.title .method.deprecated {
+  text-decoration: line-through;
+  color: grey;
+}
+

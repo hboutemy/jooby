@@ -62,6 +62,13 @@ public class OpenAPIGenerator {
       public String toString(OpenAPIGenerator tool, OpenAPI result) {
         return tool.toYaml(result);
       }
+    },
+
+    ASCIIDOC {
+      @NonNull @Override
+      public String toString(@NonNull OpenAPIGenerator tool, @NonNull OpenAPI result) {
+        return tool.toAsciiDoc(result);
+      }
     };
 
     /**
@@ -293,6 +300,14 @@ public class OpenAPIGenerator {
       return Json.mapper().writer().withDefaultPrettyPrinter().writeValueAsString(openAPI);
     } catch (IOException x) {
       throw SneakyThrows.propagate(x);
+    }
+  }
+
+  public @NonNull String toAsciiDoc(OpenAPI openAPI) {
+    try {
+      return AsciiDocGenerator.generate(openAPI);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
   }
 
